@@ -41,7 +41,7 @@ function extractCommand(argv) {
 function processCommand(command) {
     if (command == 'List All') {
         banker.listAll();
-    } else {
+    } else if (command.startsWith('List ')) {
         banker.listTransactionsForAccount(command.slice(5));
     }
 }
