@@ -44,6 +44,10 @@ class Banker {
                 transactions.push(transaction);
             }
         }
+        if (transactions.length == 0) {
+            console.log(`No transactions found for ${account}`);
+            return;
+        }
         var maxNarrative = this.getMaxWidth((value) => value.narrative, transactions);
         for (var transaction of transactions) {
             var amount = transaction.amountBasisPoints;
